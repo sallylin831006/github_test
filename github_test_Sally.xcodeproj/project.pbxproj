@@ -30,6 +30,7 @@
 		3A83F37C285AE5240053B016 /* RepoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83F37A285AE5240053B016 /* RepoTableViewCell.swift */; };
 		3A83F37D285AE5240053B016 /* RepoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A83F37B285AE5240053B016 /* RepoTableViewCell.xib */; };
 		3A83F37F285AF0790053B016 /* RepoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83F37E285AF0780053B016 /* RepoViewModel.swift */; };
+		3A83F381285B0FC20053B016 /* JGProgressHUDWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83F380285B0FC20053B016 /* JGProgressHUDWrapper.swift */; };
 		E54344EFF8A65EF84D040B44 /* Pods_github_test_Sally.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 989AADE5E842A74B72636DC8 /* Pods_github_test_Sally.framework */; };
 /* End PBXBuildFile section */
 
@@ -59,6 +60,7 @@
 		3A83F37A285AE5240053B016 /* RepoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoTableViewCell.swift; sourceTree = "<group>"; };
 		3A83F37B285AE5240053B016 /* RepoTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RepoTableViewCell.xib; sourceTree = "<group>"; };
 		3A83F37E285AF0780053B016 /* RepoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepoViewModel.swift; sourceTree = "<group>"; };
+		3A83F380285B0FC20053B016 /* JGProgressHUDWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JGProgressHUDWrapper.swift; sourceTree = "<group>"; };
 		90AA8C2D74C9AFAAEF57B867 /* Pods-github_test_Sally.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github_test_Sally.release.xcconfig"; path = "Target Support Files/Pods-github_test_Sally/Pods-github_test_Sally.release.xcconfig"; sourceTree = "<group>"; };
 		989AADE5E842A74B72636DC8 /* Pods_github_test_Sally.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_github_test_Sally.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2FF75E50A38D3E9766E3A44 /* Pods-github_test_Sally.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github_test_Sally.debug.xcconfig"; path = "Target Support Files/Pods-github_test_Sally/Pods-github_test_Sally.debug.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				3A83F36C285AB8260053B016 /* KingFisherWrapper.swift */,
+				3A83F380285B0FC20053B016 /* JGProgressHUDWrapper.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -325,6 +328,7 @@
 				3A83F364285A455A0053B016 /* UserRequest.swift in Sources */,
 				3A83F366285A46570053B016 /* UserProvider.swift in Sources */,
 				3A83F375285AE10F0053B016 /* DetailViewController.swift in Sources */,
+				3A83F381285B0FC20053B016 /* JGProgressHUDWrapper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

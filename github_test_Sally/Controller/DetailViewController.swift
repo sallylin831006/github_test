@@ -10,10 +10,7 @@ import UIKit
 
 class DetailViewController: UIViewController {
     
-    private let viewModel = RepoViewModel()
-    
-    var userData: User?
-    
+    var viewModel: RepoViewModel?
     
     @IBOutlet weak var tableView: UITableView! {
         
@@ -26,6 +23,11 @@ class DetailViewController: UIViewController {
         }
     }
     
+    enum TableViewSecction : Int, CaseIterable {
+        case user = 0
+        case repos = 1
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.register(UINib(nibName: String(describing: DetailUserTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: DetailUserTableViewCell.self))
@@ -36,12 +38,13 @@ class DetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel.fetchRepoData(userName: userData?.login ?? "")
+        guard let userName = viewModel?.userData.login else { return }
+        viewModel?.fetchRepoData(userName: userName)
         
     }
     
     private func dataBinding() {
-        viewModel.repoData.bind { [weak self] test in
+        viewModel?.repoData.bind { [weak self] test in
             
             guard let self = self else { return }
             
@@ -55,11 +58,6 @@ class DetailViewController: UIViewController {
     
 }
 
-enum TableViewSecction : Int, CaseIterable {
-    case user = 0
-    case repos = 1
-}
-
 extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -68,7 +66,8 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        let section = TableViewSecction(rawValue: section)
+        guard let section = TableViewSecction(rawValue: section),
+              let viewModel = viewModel else { return 0 }
         
         switch section {
             
@@ -76,18 +75,15 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
             return 1
             
         case .repos :
-            print("viewModel.repoData.value.count",viewModel.repoData.value.count)
             return viewModel.repoData.value.count
             
-        case .none:
-            return 1 ///????????????
         }
     }
     
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let row = TableViewSecction(rawValue: indexPath.section)
+        guard let row = TableViewSecction(rawValue: indexPath.section) else { return UITableViewCell() }
         
         switch row {
             
@@ -97,7 +93,7 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
                 withIdentifier: String(describing: DetailUserTableViewCell.self), for: indexPath)
                     as? DetailUserTableViewCell else { return UITableViewCell() }
             
-            guard let item = userData else { return UITableViewCell() }
+            guard let item = viewModel?.userData else { return UITableViewCell() }
             
             cell.configureLayoutCell(data: item)
             
@@ -109,15 +105,14 @@ extension DetailViewController: UITableViewDataSource, UITableViewDelegate {
                 withIdentifier: String(describing: RepoTableViewCell.self), for: indexPath)
                     as? RepoTableViewCell else { return UITableViewCell() }
             
+            guard let viewModel = viewModel else { return UITableViewCell() }
+            
             let item = viewModel.repoData.value[indexPath.row]
             
             cell.configureLayoutCell(data: item)
             
             return cell
             
-        case .none:
-            
-            return UITableViewCell()
         }
         
     }

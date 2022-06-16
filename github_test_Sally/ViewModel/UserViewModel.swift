@@ -12,11 +12,9 @@ class UserViewModel {
     var userData = Box([User]())
     
     private let userProvider = UserProvider()
-
     
     func fetchUserData() {
 
-        
         userProvider.getUserList(completion: { [weak self] result in
             
             guard let self = self else { return }
@@ -28,7 +26,7 @@ class UserViewModel {
                 self.userData.value = usersListData
                 
             case .failure:
-                print("失敗")
+                ProgressHUD.showFailure(text: "讀取資料失敗")
             }
         })
      

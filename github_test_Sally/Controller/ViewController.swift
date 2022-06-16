@@ -27,7 +27,7 @@ class ViewController: UIViewController {
         tableView.register(UINib(nibName: String(describing: UserTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: UserTableViewCell.self))
         
         dataBinding()
-        
+            
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -37,13 +37,13 @@ class ViewController: UIViewController {
     
     private func dataBinding() {
         viewModel.userData.bind { [weak self] _ in
+            
             guard let self = self else { return }
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
         }
-        
     }
     
 }
@@ -77,8 +77,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         guard let detailViewController = storyboard?.instantiateViewController(
             withIdentifier: String(describing: DetailViewController.self)) as? DetailViewController else { return }
         
-        detailViewController.userData = viewModel.userData.value[indexPath.row]
-        
+        detailViewController.viewModel = RepoViewModel(userData: viewModel.userData.value[indexPath.row])
+                
         navigationController?.pushViewController(detailViewController, animated: true)
     }
     

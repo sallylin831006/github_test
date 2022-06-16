@@ -13,6 +13,12 @@ class RepoViewModel {
     
     private let userProvider = UserProvider()
     
+    var userData: User
+    
+    init(userData: User) {
+        self.userData = userData
+    }
+    
     func fetchRepoData(userName: String) {
         
         let quene = DispatchQueue(label: "com.gitHub.Sallytest", attributes: .concurrent)
@@ -29,7 +35,7 @@ class RepoViewModel {
                     self.repoData.value = repoData
                     
                 case .failure:
-                    print("失敗")
+                    ProgressHUD.showFailure(text: "讀取資料失敗")
                 }
             })
             
