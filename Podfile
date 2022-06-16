@@ -7,5 +7,6 @@ target 'github_test_Sally' do
 
   # Pods for github_test_Sally
     pod 'Kingfisher'
+    pod 'JGProgressHUD'
 
 end
