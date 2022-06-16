@@ -27,6 +27,32 @@ class ViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        fetchData()
+    }
+    
+    // MARK: - GET Friends List
+    private func fetchData() {
+        let userProvider = UserProvider()
+        
+        userProvider.getUserList(completion: { [weak self] result in
+            
+            switch result {
+                
+            case .success(let usersListData):
+                
+                print("usersListData", usersListData)
+                
+//                self?.friendListData = friendListData.data
+                
+            case .failure:
+                print("失敗")
+//                ProgressHUD.showFailure(text: "讀取失敗")
+            }
+        })
+    }
+    
     
 }
 

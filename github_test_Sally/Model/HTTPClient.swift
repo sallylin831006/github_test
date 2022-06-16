@@ -41,11 +41,15 @@ enum STHTTPHeaderField: String {
     case contentType = "Content-Type"
 
     case auth = "Authorization"
+    
+    case accept = "Accept"
 }
 
 enum STHTTPHeaderValue: String {
 
     case json = "application/json"
+    
+    case acceptJson = "application/vnd.github.v3+json"
 }
 
 protocol STRequest {

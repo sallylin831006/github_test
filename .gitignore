@@ -73,7 +73,4 @@ DerivedData/
 
 # End of https://www.gitignore.io/api/xcode,macos,cocoapods
 
-FunTraveler/Model/Map/MapConstants.swift
-FunTraveler/GoogleService-Info.plist
-FunTraveler/Resource/Constant/KeyConstants.swift
-FunTraveler/Model/Map/KeyConstants.swift
+github_test_Sally/KeyConstant.swift

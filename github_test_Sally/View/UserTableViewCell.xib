@@ -19,8 +19,8 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PFl-Zr-32D">
                         <rect key="frame" x="30" y="5.5" width="53" height="53"/>
                         <constraints>
+                            <constraint firstAttribute="width" constant="53" id="NDK-hl-A56"/>
                             <constraint firstAttribute="width" secondItem="PFl-Zr-32D" secondAttribute="height" multiplier="1:1" id="lyY-gp-kQg"/>
-                            <constraint firstAttribute="width" constant="53" id="zg5-2z-vwu"/>
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jvc-S0-BnF">
@@ -40,10 +40,11 @@
                     <constraint firstItem="PFl-Zr-32D" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="1uS-hh-qKE"/>
                     <constraint firstItem="PFl-Zr-32D" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="Fua-Og-Yho"/>
                     <constraint firstItem="YeX-Q6-PTH" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="HeK-Tk-HBo"/>
+                    <constraint firstItem="Jvc-S0-BnF" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="21.5" id="OpE-eP-gQz"/>
                     <constraint firstItem="Jvc-S0-BnF" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="PrZ-AM-LFM"/>
                     <constraint firstAttribute="trailing" secondItem="YeX-Q6-PTH" secondAttribute="trailing" constant="30" id="cKj-1U-pd2"/>
-                    <constraint firstItem="PFl-Zr-32D" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5.5" id="r9H-7g-0M3"/>
                     <constraint firstItem="Jvc-S0-BnF" firstAttribute="leading" secondItem="PFl-Zr-32D" secondAttribute="trailing" constant="16" id="s1i-FO-ii7"/>
+                    <constraint firstAttribute="bottom" secondItem="Jvc-S0-BnF" secondAttribute="bottom" constant="21.5" id="yZJ-Ot-fer"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
