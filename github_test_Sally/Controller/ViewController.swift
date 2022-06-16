@@ -9,12 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    var userData: [User] = [] {
-        didSet {
-            tableView.reloadData()
-        }
-    }
-    
+    private let viewModel = UserViewModel()
     
     @IBOutlet weak var tableView: UITableView! {
         
@@ -31,34 +26,25 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tableView.register(UINib(nibName: String(describing: UserTableViewCell.self), bundle: nil), forCellReuseIdentifier: String(describing: UserTableViewCell.self))
         
+        dataBinding()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        fetchData()
+        viewModel.fetchUserData()
     }
     
-    // MARK: - GET Friends List
-    private func fetchData() {
-        let userProvider = UserProvider()
-        
-        userProvider.getUserList(completion: { [weak self] result in
+    private func dataBinding() {
+        viewModel.userData.bind { [weak self] _ in
+            guard let self = self else { return }
             
-            switch result {
-                
-            case .success(let usersListData):
-                
-                print("usersListData", usersListData)
-                
-                self?.userData = usersListData
-                
-            case .failure:
-                print("失敗")
-//                ProgressHUD.showFailure(text: "讀取失敗")
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
             }
-        })
+        }
+        
     }
-    
     
 }
 
@@ -67,7 +53,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        userData.count
+        viewModel.userData.value.count
         
     }
     
@@ -78,8 +64,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             withIdentifier: String(describing: UserTableViewCell.self), for: indexPath)
                 as? UserTableViewCell else { return UITableViewCell() }
         
-                
-        let item = userData[indexPath.row]
+        let item = viewModel.userData.value[indexPath.row]
         
         cell.configureLayoutCell(data: item)
         

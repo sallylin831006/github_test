@@ -22,6 +22,8 @@
 		3A83F368285A46A30053B016 /* UserObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83F367285A46A30053B016 /* UserObject.swift */; };
 		3A83F36A285A4A400053B016 /* KeyConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83F369285A4A400053B016 /* KeyConstant.swift */; };
 		3A83F36D285AB8260053B016 /* KingFisherWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83F36C285AB8260053B016 /* KingFisherWrapper.swift */; };
+		3A83F370285AC2DD0053B016 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83F36F285AC2DD0053B016 /* Box.swift */; };
+		3A83F373285AC3470053B016 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83F372285AC3470053B016 /* UserViewModel.swift */; };
 		E54344EFF8A65EF84D040B44 /* Pods_github_test_Sally.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 989AADE5E842A74B72636DC8 /* Pods_github_test_Sally.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +45,8 @@
 		3A83F367285A46A30053B016 /* UserObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserObject.swift; sourceTree = "<group>"; };
 		3A83F369285A4A400053B016 /* KeyConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyConstant.swift; sourceTree = "<group>"; };
 		3A83F36C285AB8260053B016 /* KingFisherWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KingFisherWrapper.swift; sourceTree = "<group>"; };
+		3A83F36F285AC2DD0053B016 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		3A83F372285AC3470053B016 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
 		90AA8C2D74C9AFAAEF57B867 /* Pods-github_test_Sally.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github_test_Sally.release.xcconfig"; path = "Target Support Files/Pods-github_test_Sally/Pods-github_test_Sally.release.xcconfig"; sourceTree = "<group>"; };
 		989AADE5E842A74B72636DC8 /* Pods_github_test_Sally.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_github_test_Sally.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2FF75E50A38D3E9766E3A44 /* Pods-github_test_Sally.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github_test_Sally.debug.xcconfig"; path = "Target Support Files/Pods-github_test_Sally/Pods-github_test_Sally.debug.xcconfig"; sourceTree = "<group>"; };
@@ -86,6 +90,8 @@
 				3A83F369285A4A400053B016 /* KeyConstant.swift */,
 				3A83F361285A44F40053B016 /* Controller */,
 				3A83F360285A44EB0053B016 /* Model */,
+				3A83F36E285AC2410053B016 /* Utilities */,
+				3A83F371285AC3280053B016 /* ViewModel */,
 				3A83F362285A45030053B016 /* View */,
 				3A83F346285A3C840053B016 /* SceneDelegate.swift */,
 				3A83F344285A3C840053B016 /* AppDelegate.swift */,
@@ -131,6 +137,22 @@
 				3A83F36C285AB8260053B016 /* KingFisherWrapper.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		3A83F36E285AC2410053B016 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				3A83F36F285AC2DD0053B016 /* Box.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		3A83F371285AC3280053B016 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				3A83F372285AC3470053B016 /* UserViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		4F3E104D333692C26FE4965C /* Frameworks */ = {
@@ -275,6 +297,8 @@
 				3A83F347285A3C840053B016 /* SceneDelegate.swift in Sources */,
 				3A83F36D285AB8260053B016 /* KingFisherWrapper.swift in Sources */,
 				3A83F35F285A43200053B016 /* Constant.swift in Sources */,
+				3A83F373285AC3470053B016 /* UserViewModel.swift in Sources */,
+				3A83F370285AC2DD0053B016 /* Box.swift in Sources */,
 				3A83F364285A455A0053B016 /* UserRequest.swift in Sources */,
 				3A83F366285A46570053B016 /* UserProvider.swift in Sources */,
 			);
