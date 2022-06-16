@@ -10,28 +10,31 @@ import Foundation
 class RepoViewModel {
     
     var repoData = Box([Repo]())
-
+    
     private let userProvider = UserProvider()
-
+    
     func fetchRepoData(userName: String) {
         
-        userProvider.getRepo(userName: userName, completion: { [weak self] result in
-            
-            guard let self = self else { return }
-            
-            switch result {
+        let quene = DispatchQueue(label: "com.gitHub.Sallytest", attributes: .concurrent)
+        
+        quene.async {
+            self.userProvider.getRepo(userName: userName, completion: { [weak self] result in
                 
-            case .success(let repoData):
+                guard let self = self else { return }
                 
-                self.repoData.value = repoData
-
-            case .failure:
-                print("失敗")
-            }
-        })
-     
+                switch result {
+                    
+                case .success(let repoData):
+                    
+                    self.repoData.value = repoData
+                    
+                case .failure:
+                    print("失敗")
+                }
+            })
+            
+        }
+        
     }
-    
-  
-    
+   
 }
