@@ -2,19 +2,19 @@
 - Introduction to all my works
 
 
-1. Add git ignore and new xcode project
-2. Read the doc about GitHub User API 
-3. Use Postman to check if GitHub User API is aviliable
-4. User singlton to build HttpClient setting
-5. Use struct with Codable including image from “avatar_url”, “login”, and “site_admin”.
-6. Register nib for tableView and tableView Cell
-7. Fetch data and show list in tableView
-8. Use Kingfisher for downloading and caching images
-9. Found that GitHub User API has already limit results to 100
-10. Refactoring from MVC to MVVM
-11. Implement dtail page when clicking on an user in the list
-12. Implement with multithread to better user experience
-13. Implement JGProgressHUD to hadle error with result type failure
+1.Add git ignore and new Xcode project
+2.Read the doc about GitHub User API
+3.Use Postman to check if GitHub User API is available
+4.User singleton to build HttpClient setting
+5.Use struct with Codable including images from “avatar_url”, “login”, and “site_admin”.
+6.Register nib for tableView and tableView Cell
+7.Fetch data and show list in tableView
+8.Use Kingfisher for downloading and caching images
+9.Found that GitHub User API has already limited results to 100
+10.Refactoring from MVC to MVVM
+11.Implement detail page when clicking on a user in the list
+12.Implement with multithread to better user experience
+13.Implement JGProgressHUD to handle error with result type failure
 14. I Found let use `?per_page=100` can limit results to 100 users in total.
 
 # **Goal**
