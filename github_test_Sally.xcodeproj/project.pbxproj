@@ -21,6 +21,7 @@
 		3A83F366285A46570053B016 /* UserProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83F365285A46570053B016 /* UserProvider.swift */; };
 		3A83F368285A46A30053B016 /* UserObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83F367285A46A30053B016 /* UserObject.swift */; };
 		3A83F36A285A4A400053B016 /* KeyConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A83F369285A4A400053B016 /* KeyConstant.swift */; };
+		E54344EFF8A65EF84D040B44 /* Pods_github_test_Sally.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 989AADE5E842A74B72636DC8 /* Pods_github_test_Sally.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,9 @@
 		3A83F365285A46570053B016 /* UserProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProvider.swift; sourceTree = "<group>"; };
 		3A83F367285A46A30053B016 /* UserObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserObject.swift; sourceTree = "<group>"; };
 		3A83F369285A4A400053B016 /* KeyConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyConstant.swift; sourceTree = "<group>"; };
+		90AA8C2D74C9AFAAEF57B867 /* Pods-github_test_Sally.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github_test_Sally.release.xcconfig"; path = "Target Support Files/Pods-github_test_Sally/Pods-github_test_Sally.release.xcconfig"; sourceTree = "<group>"; };
+		989AADE5E842A74B72636DC8 /* Pods_github_test_Sally.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_github_test_Sally.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F2FF75E50A38D3E9766E3A44 /* Pods-github_test_Sally.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-github_test_Sally.debug.xcconfig"; path = "Target Support Files/Pods-github_test_Sally/Pods-github_test_Sally.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E54344EFF8A65EF84D040B44 /* Pods_github_test_Sally.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,6 +63,8 @@
 			children = (
 				3A83F343285A3C840053B016 /* github_test_Sally */,
 				3A83F342285A3C840053B016 /* Products */,
+				89824DC70EA2D4392754AD49 /* Pods */,
+				4F3E104D333692C26FE4965C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +122,24 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		4F3E104D333692C26FE4965C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				989AADE5E842A74B72636DC8 /* Pods_github_test_Sally.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		89824DC70EA2D4392754AD49 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F2FF75E50A38D3E9766E3A44 /* Pods-github_test_Sally.debug.xcconfig */,
+				90AA8C2D74C9AFAAEF57B867 /* Pods-github_test_Sally.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -122,9 +147,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3A83F355285A3C860053B016 /* Build configuration list for PBXNativeTarget "github_test_Sally" */;
 			buildPhases = (
+				EF816ECB2A0AD02B8E54388A /* [CP] Check Pods Manifest.lock */,
 				3A83F33D285A3C840053B016 /* Sources */,
 				3A83F33E285A3C840053B016 /* Frameworks */,
 				3A83F33F285A3C840053B016 /* Resources */,
+				67A9988A01A3F940686DAB2D /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -181,6 +208,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		67A9988A01A3F940686DAB2D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-github_test_Sally/Pods-github_test_Sally-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-github_test_Sally/Pods-github_test_Sally-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-github_test_Sally/Pods-github_test_Sally-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF816ECB2A0AD02B8E54388A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-github_test_Sally-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		3A83F33D285A3C840053B016 /* Sources */ = {
@@ -340,6 +409,7 @@
 		};
 		3A83F356285A3C860053B016 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F2FF75E50A38D3E9766E3A44 /* Pods-github_test_Sally.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -368,6 +438,7 @@
 		};
 		3A83F357285A3C860053B016 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90AA8C2D74C9AFAAEF57B867 /* Pods-github_test_Sally.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
