@@ -11,6 +11,8 @@ enum UserRequest: STRequest {
     
     case getUserList(token: String)
     
+    case getRepo(userName: String)
+    
     var headers: [String: String] {
         
         switch self {
@@ -21,7 +23,11 @@ enum UserRequest: STRequest {
                 STHTTPHeaderField.auth.rawValue: "token \(token)",
                 STHTTPHeaderField.accept.rawValue: STHTTPHeaderValue.acceptJson.rawValue
             ]
+            
+        case .getRepo: return [:]
+            
         }
+
     }
     
     var body: Data? {
@@ -29,7 +35,8 @@ enum UserRequest: STRequest {
         switch self {
             
         case .getUserList: return nil
-        
+        case .getRepo: return nil
+            
         }
         
     }
@@ -38,7 +45,7 @@ enum UserRequest: STRequest {
         switch self {
             
         case .getUserList : return STHTTPMethod.GET.rawValue
-        
+        case .getRepo: return STHTTPMethod.GET.rawValue
         }
     }
     
@@ -48,6 +55,9 @@ enum UserRequest: STRequest {
             
         case .getUserList:
             return "/users"
+            
+        case .getRepo(let userName):
+            return "/users/\(userName)/repos"
             
         }
         

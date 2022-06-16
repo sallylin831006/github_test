@@ -72,6 +72,16 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard let detailViewController = storyboard?.instantiateViewController(
+            withIdentifier: String(describing: DetailViewController.self)) as? DetailViewController else { return }
+        
+        detailViewController.userData = viewModel.userData.value[indexPath.row]
+        
+        navigationController?.pushViewController(detailViewController, animated: true)
+    }
+    
     
     
 }

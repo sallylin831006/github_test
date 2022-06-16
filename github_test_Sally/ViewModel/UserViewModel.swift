@@ -11,14 +11,11 @@ class UserViewModel {
     
     var userData = Box([User]())
     
-//    init() {
-//      changeLocation(to: Self.defaultAddress)
-//    }
-    
+    private let userProvider = UserProvider()
+
     
     func fetchUserData() {
 
-        let userProvider = UserProvider()
         
         userProvider.getUserList(completion: { [weak self] result in
             
@@ -32,12 +29,9 @@ class UserViewModel {
                 
             case .failure:
                 print("失敗")
-//                ProgressHUD.showFailure(text: "讀取失敗")
             }
         })
      
     }
-    
-  
     
 }
