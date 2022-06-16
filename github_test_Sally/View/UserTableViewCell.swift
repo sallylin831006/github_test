@@ -21,7 +21,11 @@ class UserTableViewCell: UITableViewCell {
         // Initialization code
     }
     
-    func layoutCell() {
+    func configureLayoutCell(data: User) {
+        
+        userImageView.loadImage(data.avatarUrl)
+        userNameLabel.text = data.login
+        adminStatus.text = "siteAdmin: \(data.siteAdmin)"
         
     }
 

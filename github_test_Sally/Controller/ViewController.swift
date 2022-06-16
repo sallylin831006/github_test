@@ -9,6 +9,12 @@ import UIKit
 
 class ViewController: UIViewController {
     
+    var userData: [User] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
     
     @IBOutlet weak var tableView: UITableView! {
         
@@ -44,7 +50,7 @@ class ViewController: UIViewController {
                 
                 print("usersListData", usersListData)
                 
-//                self?.friendListData = friendListData.data
+                self?.userData = usersListData
                 
             case .failure:
                 print("失敗")
@@ -61,7 +67,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        10
+        userData.count
         
     }
     
@@ -72,8 +78,10 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             withIdentifier: String(describing: UserTableViewCell.self), for: indexPath)
                 as? UserTableViewCell else { return UITableViewCell() }
         
+                
+        let item = userData[indexPath.row]
         
-        cell.userNameLabel.text = "123"
+        cell.configureLayoutCell(data: item)
         
         return cell
         
